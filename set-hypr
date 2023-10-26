@@ -208,8 +208,8 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
             mv $DIRPATH $DIRPATH-back &>> $INSTLOG
             echo -e "$COK - Backed up $DIR to $DIRPATH-back."
         fi
-        echo -e "$CNT - Copying $DIR config to $DIRPATH."  
-        cp -R $DIR ~/.config/ &>> $INSTLOG
+        echo -e "$CNT - Making symlink from $DIR config to $DIRPATH."  
+        ln -s $PWD/$DIR ~/.config &>> $INSTLOG
     done
 
     # Set some files as exacutable
