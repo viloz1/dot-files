@@ -1,0 +1,12 @@
+Old microprocessor is gone. The M7, reimplement it in rtic? Ben can do
+some initial testing to see what is feasible. If it is not, then
+another system. Focus on performance, security and usability.
+
+Measure if deadlines are meeting?
+Check memory related stuff as well.
+Measure cache misses and so on. But could be very hard to use...
+
+Write a contract? Chalmers probably has some sort of templates.
+Satcube is probably fine with the contents, but maybe not code?
+35 000kr compensation
+
