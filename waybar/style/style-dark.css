@@ -32,7 +32,7 @@ tooltip label{
 }
 
 #workspaces button.active {
-    color: #a6adc8
+    color: #a6adc8;
 }
 
 #workspaces button.focused {
@@ -80,7 +80,7 @@ tooltip label{
     border: 0px;
 }
 
-#tray, #custom-lock_screen, #temperature, #backlight, #custom-launch_wofi, #cpu {
+#tray, #custom-lock_screen, #temperature, #pulseaudio, #custom-launch_wofi, #cpu {
     border-radius: 10px 0px 0px 10px;
 }
 
