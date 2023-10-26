@@ -287,6 +287,8 @@ if [[ $ROG == "Y" || $ROG == "y" ]]; then
     echo -e "\nsource = ~/.config/hypr/rog-g15-strix-2021-binds.conf" >> ~/.config/hypr/hyprland.conf
 fi
 
+sudo cp ./logind.conf /etc/systemd/logind.conf
+
 #Change shell to fish
 chsh -s /usr/bin/fish
 
