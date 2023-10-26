@@ -145,7 +145,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 
     #Stage 2
     echo -e "\n$CNT - Stage 2 - Installing additional tools and utilities, this may take a while..."
-    for SOFTWR in swayidle sway-audio-idle-inhibit-git firefox nano mullvad-vpn slack-desktop discord signal-desktop polkit-gnome python-requests pamixer pavucontrol brightnessctl bluez bluez-utils blueman network-manager-applet gvfs thunar-archive-plugin file-roller btop pacman-contrib
+    for SOFTWR in neofetch lolcat fish swayidle sway-audio-idle-inhibit-git firefox nano mullvad-vpn slack-desktop discord signal-desktop polkit-gnome python-requests pamixer pavucontrol brightnessctl bluez bluez-utils blueman network-manager-applet gvfs thunar-archive-plugin file-roller btop pacman-contrib
     do
         #First lets see if the package is there
         if yay -Qs $SOFTWR > /dev/null ; then
@@ -200,7 +200,7 @@ fi
 read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to copy config files? (y,n) ' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "$CNT - Copying config files..."
-    for DIR in hypr kitty mako swaylock waybar wlogout wofi 
+    for DIR in fish hypr kitty mako swaylock waybar wlogout wofi 
     do 
         DIRPATH=~/.config/$DIR
         if [ -d "$DIRPATH" ]; then 
@@ -219,6 +219,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     chmod +x ~/.config/waybar/scripts/waybar-wttr.py
     chmod +x ~/.config/waybar/scripts/baraction
     chmod +x ~/.config/waybar/scripts/update-sys
+    chmod +x ~/.config/hypr/scripts/sleep.sh
 
     # Copy the SDDM theme
     echo -e "$CNT - Setting up the login screen."
@@ -285,6 +286,9 @@ if [[ $ROG == "Y" || $ROG == "y" ]]; then
     #add the keybinding file to the config
     echo -e "\nsource = ~/.config/hypr/rog-g15-strix-2021-binds.conf" >> ~/.config/hypr/hyprland.conf
 fi
+
+#Change shell to fish
+chsh -s /usr/bin/fish
 
 ### Script is done ###
 echo -e "$CNT - Script had completed!"
