@@ -145,7 +145,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 
     #Stage 2
     echo -e "\n$CNT - Stage 2 - Installing additional tools and utilities, this may take a while..."
-    for SOFTWR in kinit neofetch lolcat fish swayidle sway-audio-idle-inhibit-git firefox nano mullvad-vpn slack-desktop discord signal-desktop polkit-gnome python-requests pamixer pavucontrol brightnessctl bluez bluez-utils blueman network-manager-applet gvfs thunar-archive-plugin file-roller btop pacman-contrib base-devel
+    for SOFTWR in neofetch lolcat fish swayidle sway-audio-idle-inhibit-git firefox nano mullvad-vpn slack-desktop discord signal-desktop polkit-gnome python-requests pamixer pavucontrol brightnessctl bluez bluez-utils blueman network-manager-applet gvfs thunar-archive-plugin file-roller btop pacman-contrib base-devel
     do
         #First lets see if the package is there
         if yay -Qs $SOFTWR > /dev/null ; then
@@ -290,9 +290,15 @@ fi
 sudo cp ./logind.conf /etc/systemd/logind.conf
 
 #Change shell to fish
+echo -e "$CNT - Changing shell to fish"
 chsh -s /usr/bin/fish
 
+#Install kinit via pacman. This is needed for flameshot. Yay does not work
+echo -e "$CNT - Installing kinit - needed for flameshot"
+sudo pacman -S kinit
+
 #Install flameshot
+echo -e "$CNT - Installing flameshot..."
 chmod +x ./install-scripts/install_flameshot.sh
 ./install-scripts/install_flameshot.sh &>> $INSTLOG
 
