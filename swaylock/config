@@ -35,4 +35,4 @@ grace-no-touch
 datestr=%a, %B %e
 timestr=%H:%M:%S
 fade-in=0.2
-ignore-empty-password
+#ignore-empty-password

@@ -297,10 +297,34 @@ chsh -s /usr/bin/fish
 echo -e "$CNT - Installing kinit - needed for flameshot"
 sudo pacman -S kinit
 
+if sudo pacman -Qs kinit > /dev/null ; then
+	echo -e "$COK - kinit was installed."
+else
+        echo -e "$CER - kinit install had failed, please check the install.log"
+	exit
+fi
+
 #Install flameshot
 echo -e "$CNT - Installing flameshot..."
 chmod +x ./install-scripts/install_flameshot.sh
 ./install-scripts/install_flameshot.sh &>> $INSTLOG
+
+if flameshot -v > /dev/null ; then
+        echo -e "$COK - flameshot was installed."
+else
+        echo -e "$CER - flameshot install had failed, please check the install.log"
+fi
+
+#Install mako
+echo -e "$CNT - Installing mako..."
+chmod +x ./install-scripts/install_mako.sh
+./install-scripts/install_mako.sh &>> $INSTLOG
+
+if mako -h  > /dev/null ; then
+        echo -e "$COK - mako was installed."
+else
+        echo -e "$CER - mako install had failed, please check the install.log"
+fi
 
 ### Script is done ###
 echo -e "$CNT - Script had completed!"
