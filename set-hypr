@@ -316,15 +316,15 @@ else
 fi
 
 #Install mako
-echo -e "$CNT - Installing mako..."
-chmod +x ./install-scripts/install_mako.sh
-./install-scripts/install_mako.sh &>> $INSTLOG
+#echo -e "$CNT - Installing mako..."
+#chmod +x ./install-scripts/install_mako.sh
+#./install-scripts/install_mako.sh &>> $INSTLOG
 
-if mako -h  > /dev/null ; then
-        echo -e "$COK - mako was installed."
-else
-        echo -e "$CER - mako install had failed, please check the install.log"
-fi
+#if mako -h  > /dev/null ; then
+#        echo -e "$COK - mako was installed."
+#else
+#        echo -e "$CER - mako install had failed, please check the install.log"
+#fi
 
 ### Script is done ###
 echo -e "$CNT - Script had completed!"
