@@ -126,7 +126,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 
     #Stage 1
     echo -e "\n$CNT - Stage 1 - Installing main components, this may take a while..."
-    for SOFTWR in hyprland kitty waybar swww swaylock-effects rofi wlogout mako xdg-desktop-portal-hyprland swappy grim slurp thunar
+    for SOFTWR in hyprland kitty waybar swww swaylock-effects rofi wlogout xdg-desktop-portal-hyprland swappy grim slurp thunar
     do
         #First lets see if the package is there
         if yay -Qs $SOFTWR > /dev/null ; then
@@ -184,6 +184,25 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     #Stage 4
     echo -e "\n$CNT - Stage 4 - Installing GPU drivers"
     for SOFTWR in mesa vulkan-radeon xf86-video-amdgpu libva-mesa-driver
+    do
+        #First lets see if the package is there
+        if pacman -Qs $SOFTWR > /dev/null ; then
+            echo -e "$COK - $SOFTWR is already installed."
+        else
+            echo -e "$CNT - Now installing $SOFTWR ..."
+            pacman -S --noconfirm $SOFTWR &>> $INSTLOG
+            if pacman -Qs $SOFTWR > /dev/null ; then
+                echo -e "$COK - $SOFTWR was installed."
+            else
+                echo -e "$CER - $SOFTWR install had failed, please check the install.log"
+                exit
+            fi
+        fi
+    done
+
+    #Stage 5
+    echo -e "\n$CNT - Stage 5 - Installing custom pacman packages"
+    for SOFTWR in mako
     do
         #First lets see if the package is there
         if pacman -Qs $SOFTWR > /dev/null ; then
