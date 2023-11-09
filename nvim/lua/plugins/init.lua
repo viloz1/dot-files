@@ -3,20 +3,24 @@
 local default_plugins = {
 
   "nvim-lua/plenary.nvim",
-
   {
-   "sbdchd/neoformat",
-   lazy = false,
-   init = function()
-   	vim.g.neoformat_try_node_exe = 1
-   end,
+    "sbdchd/neoformat",
+    lazy = false,
+    init = function ()
+      vim.g.neoformat_try_node_exe = 1
+    end,
   },
 
-{
-"mfussenegger/nvim-lint",
-lazy = false,
-},
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
 
+  },
+  {
+    "mfussenegger/nvim-lint",
+    lazy = false,
+  },
+  
   {
     "NvChad/base46",
     branch = "v2.0",
@@ -24,7 +28,7 @@ lazy = false,
       require("base46").load_all_highlights()
     end,
   },
-
+  
   {
     "NvChad/ui",
     branch = "v2.0",
@@ -145,6 +149,17 @@ lazy = false,
       end, {})
 
       vim.g.mason_binaries_list = opts.ensure_installed
+    end,
+  },
+
+  {
+    "williamboman/mason-lspconfig.nvim",
+    lazy = false,
+    init = function()
+      require("mason").setup()
+      require("mason-lspconfig").setup()
+      require("lspconfig").rust_analyzer.setup({})
+      require("lspconfig").eslint.setup({})
     end,
   },
 
@@ -274,7 +289,7 @@ lazy = false,
       dofile(vim.g.base46_cache .. "whichkey")
       require("which-key").setup(opts)
     end,
-  },
+  }, 
 }
 
 local config = require("core.utils").load_config()
