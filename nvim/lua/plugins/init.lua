@@ -5,6 +5,19 @@ local default_plugins = {
   "nvim-lua/plenary.nvim",
 
   {
+   "sbdchd/neoformat",
+   lazy = false,
+   init = function()
+   	vim.g.neoformat_try_node_exe = 1
+   end,
+  },
+
+{
+"mfussenegger/nvim-lint",
+lazy = false,
+},
+
+  {
     "NvChad/base46",
     branch = "v2.0",
     build = function()
