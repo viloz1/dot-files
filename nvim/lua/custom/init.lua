@@ -2,8 +2,8 @@ local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.opt
 
 autocmd("BufWritePost", {
-  pattern = {"*.tsx"},
+  pattern = {"*"},
   callback = function ()
-        vim.cmd("Neoformat prettier")
+        vim.cmd("FormatWrite")
   end
 })
