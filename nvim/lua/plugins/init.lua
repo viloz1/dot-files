@@ -3,11 +3,6 @@
 local default_plugins = {
 
   "nvim-lua/plenary.nvim",
-
-  {
-    "folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
   {
     "mhartington/formatter.nvim",
     lazy = false,
@@ -55,7 +50,7 @@ local default_plugins = {
       }
     }
     end,
-    
+
   },
   {
     "mfussenegger/nvim-lint",
@@ -330,7 +325,7 @@ local default_plugins = {
       dofile(vim.g.base46_cache .. "whichkey")
       require("which-key").setup(opts)
     end,
-  }, 
+  },
 }
 
 local config = require("core.utils").load_config()
