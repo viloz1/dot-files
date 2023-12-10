@@ -1,9 +1,7 @@
-local autocmd = vim.api.nvim_create_autocmd
-local augroup = vim.opt
+-- local autocmd = vim.api.nvim_create_autocmd
 
-autocmd("BufWritePost", {
-  pattern = {"*"},
-  callback = function ()
-        vim.cmd("FormatWrite")
-  end
-})
+-- Auto resize panes when resizing nvim window
+-- autocmd("VimResized", {
+--   pattern = "*",
+--   command = "tabdo wincmd =",
+-- })
