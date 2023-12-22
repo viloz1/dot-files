@@ -200,7 +200,7 @@ read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to install AMD GPU driver
 if [[ $INST_GPU == "Y" || $INST_GPU == "y" ]]; then
     # update the DB first
     echo -e "$COK - Updating yay database..."
-    yay -Suy --noconfirm &>> $INSTLOG
+    pacman -Suy --noconfirm &>> $INSTLOG
     
     #setup the waybar with a fix - thankyou @Mrt
     #echo -e "$CNT - Installing Waybar with fix"
@@ -276,6 +276,18 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
     gsettings set org.gnome.desktop.interface icon-theme "Adwaita-dark"
     ln -sf /usr/share/sddm/themes/sdt/Backgrounds/wallpaper-dark.jpg /usr/share/sddm/themes/sdt/wallpaper.jpg
+
+
+  read -n1 -rep $'[\e[1;33mACTION\e[0m] - Do you want to use the laptop configs? (y,n) ' INST
+    if [[ $INST == "Y" || $INST == "y" ]]; then
+        echo -e "$COK - Applying laptop configs.."
+        cp ~/.config/waybar/install-files/laptop.jsonc ~/.config/waybar/config.jsonc
+        cp ~/.config/hypr/install-files/laptop.conf ~/.config/hypr/hyprland.conf
+    else
+        echo -e "$COK - Applying stationary configs"
+        cp ~/.config/waybar/install-files/stationary.jsonc ~/.config/waybar/config.jsonc
+        cp ~/.config/hypr/install-files/stationary.conf ~/.config/hypr/hyprland.conf
+    fi
 fi
 
 ### Install the starship shell ###
@@ -315,46 +327,16 @@ if [[ $ROG == "Y" || $ROG == "y" ]]; then
 
     #add the keybinding file to the config
     echo -e "\nsource = ~/.config/hypr/rog-g15-strix-2021-binds.conf" >> ~/.config/hypr/hyprland.conf
+
+    
 fi
 
-sudo cp ./logind.conf /etc/systemd/logind.conf
+#sudo cp ./logind.conf /etc/systemd/logind.conf
 
 #Change shell to fish
 echo -e "$CNT - Changing shell to fish"
 chsh -s /usr/bin/fish
 
-#Install kinit via pacman. This is needed for flameshot. Yay does not work
-echo -e "$CNT - Installing kinit - needed for flameshot"
-sudo pacman -S kinit
-
-if sudo pacman -Qs kinit > /dev/null ; then
-	echo -e "$COK - kinit was installed."
-else
-        echo -e "$CER - kinit install had failed, please check the install.log"
-	exit
-fi
-
-#Install flameshot
-echo -e "$CNT - Installing flameshot..."
-chmod +x ./install-scripts/install_flameshot.sh
-./install-scripts/install_flameshot.sh &>> $INSTLOG
-
-if flameshot -v > /dev/null ; then
-        echo -e "$COK - flameshot was installed."
-else
-        echo -e "$CER - flameshot install had failed, please check the install.log"
-fi
-
-#Install mako
-#echo -e "$CNT - Installing mako..."
-#chmod +x ./install-scripts/install_mako.sh
-#./install-scripts/install_mako.sh &>> $INSTLOG
-
-#if mako -h  > /dev/null ; then
-#        echo -e "$COK - mako was installed."
-#else
-#        echo -e "$CER - mako install had failed, please check the install.log"
-#fi
 
 ### Script is done ###
 echo -e "$CNT - Script had completed!"
