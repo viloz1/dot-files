@@ -69,7 +69,8 @@ tooltip label{
 #pulseaudio,
 #network,
 #tray,
-#temperature,
+#temperature.stationary,
+#temperature.laptop,
 #workspaces,
 #backlight {
     background: #e7e7ec;
@@ -80,7 +81,7 @@ tooltip label{
     border: 0px;
 }
 
-#tray, #custom-lock_screen, #temperature, #backlight, #custom-launch_wofi, #cpu {
+#tray, #custom-lock_screen, #temperature.stationary, #backlight, #custom-launch_wofi, #cpu {
     border-radius: 10px 0px 0px 10px;
 }
 

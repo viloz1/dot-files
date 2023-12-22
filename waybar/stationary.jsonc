@@ -1,0 +1,9 @@
+{    "modules-right": ["temperature#stationary","pulseaudio","pulseaudio#microphone","tray","custom/weather","custom/light_dark"],
+"temperature#stationary": {
+      "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "format": " {temperatureC}°C",
+        "critical-threshold": 70,
+        "format-critical": " {temperatureC}°C",
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    }
+}    
