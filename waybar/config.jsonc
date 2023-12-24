@@ -1,3 +1,0 @@
-{
- "include":[ "~/.config/waybar/stationary.jsonc","~/.config/waybar/common.jsonc"]
-}
