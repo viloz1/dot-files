@@ -149,4 +149,4 @@ configuration {
       sorting-method:    "name";
   }
 }
-@theme "/usr/share/rofi/themes/arthur.rasi"
+@theme "~/.config/rofi/theme.rasi"
