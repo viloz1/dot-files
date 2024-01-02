@@ -1,4 +1,4 @@
 backup.sh
 hypr/hyprland.conf
 waybar/config.jsonc
-*/__pycache__/*
+**/__pycache__/
