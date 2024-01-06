@@ -12,6 +12,15 @@
         "format": "{}"
     },
 
+    "custom/spotify": {
+        "exec": "~/.config/waybar/scripts/spotify.py --player spotify",
+        "format": "{}  ",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "max-length": 40
+    },
     "custom/launch_wofi": {
         "format": "",
         "on-click": "pkill wofi; wofi -n",
@@ -83,7 +92,7 @@
         "on-click": "asusctl profile -n; pkill -SIGRTMIN+8 waybar",
         "signal": 8
     },
-
+   /*
    "custom/weather": {
         //shows the current weather and forecast
         "tooltip" : true,
@@ -92,6 +101,7 @@
         "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
         "return-type" : "json"
     },
+    */
 
     "tray": {
         "icon-size": 18,

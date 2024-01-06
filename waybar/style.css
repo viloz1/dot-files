@@ -71,6 +71,7 @@ tooltip label{
 #tray,
 #temperature.laptop,
 #temperature.stationary,
+#custom-spotify,
 #workspaces,
 #backlight {
     background: #1e1e2e;
@@ -88,6 +89,11 @@ tooltip label{
 #custom-bluelight_filter, #custom-power_btn, #workspaces, #pulseaudio.microphone, #battery, #disk {
     border-radius: 0px 10px 10px 0px;
     margin-right: 10px;
+}
+
+#custom-spotify {
+  border-radius: 10px;
+  margin-right: 10px;
 }
 
 #temperature-laptop.critical #temperature-stationary {
