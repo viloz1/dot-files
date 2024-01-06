@@ -1,6 +1,6 @@
 * {
     foreground:  #cdd6f4;
-    backlight:   #ccffeedd;
+    backlight:   #ccffee00;
     background-color:  transparent;
     dark: #1c1c1c;
     // Black
@@ -40,7 +40,7 @@
     // Bold, Italic, Underline
     highlight:     underline bold #ffffff;
 
-    transparent: rgba(0,0,0,0.2);
+    transparent: rgba(0,0,0,0.0);
     font: "JetBrainsMono Nerd Font 10";
 }
 window {
@@ -51,7 +51,7 @@ window {
     border:  0px;
     border-radius: 10px;
     color: @magenta;
-    background-color: @transparent;
+    background-color: transparent;
     spacing: 0;
     children:  [mainbox];
     orientation: horizontal;
@@ -74,11 +74,12 @@ message {
 inputbar {
     color: @lightcyan;
     padding: 11px;
-    background-color: #1e1e2ecc;
+    background-color: #1e1e2e70;
     //border: 1px 1px 0px 1px;
     border-radius:  10px 10px 0px 0px;
     border-color: @foreground;
     font-weight: 20px;
+    
     font: "JetBrainsMono Nerd Font";
 }
 entry,prompt,case-indicator {
@@ -93,7 +94,7 @@ listview {
     border-radius: 0px 0px 10px 10px;
     border-color: @foreground;
     //border: 0px 1px 1px 1px;
-    background-color: #1e1e2ecc;
+    background-color: #1e1e2e70;
     dynamic: false;
     lines: 10;
 }
