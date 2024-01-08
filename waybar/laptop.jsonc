@@ -1,5 +1,5 @@
 {
-    "modules-right": [""custom/spotify","temperature#laptop","custom/power_profile","battery","backlight","pulseaudio","pulseaudio#microphone","tray","custom/weather","custom/bluelight_filter"],
+    "modules-right": ["custom/spotify","temperature#laptop","custom/power_profile","battery","backlight","pulseaudio","pulseaudio#microphone","tray","custom/weather","custom/bluelight_filter"],
 "temperature#laptop": {
         "thermal-zone": 7,
         "format": " {temperatureC}°C",
