@@ -164,7 +164,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 
     #Stage 3
     echo -e "\n$CNT - Stage 3 - Installing theme and visual related tools and utilities, this may take a while..."
-    for SOFTWR in starship otf-font-awesome-5 ttf-jetbrains-mono-nerd noto-fonts-emoji lxappearance xfce4-settings sddm-git qt5-svg qt5-quickcontrols2 qt5-graphicaleffects qt5-base qt5-tools
+    for SOFTWR in starship easyeffects lsp-plugins-lv2 calf mda.lv2 yelp zam-plugins-lv2 otf-font-awesome-5 ttf-jetbrains-mono-nerd noto-fonts-emoji lxappearance xfce4-settings sddm-git qt5-svg qt5-quickcontrols2 qt5-graphicaleffects qt5-base qt5-tools
     do
         #First lets see if the package is there
         if yay -Qs $SOFTWR > /dev/null ; then
