@@ -1,0 +1,10 @@
+{
+    "modules-right": ["custom/spotify","temperature#laptop","custom/power_profile","battery","backlight","pulseaudio","pulseaudio#microphone","tray","custom/weather","custom/bluelight_filter"],
+"temperature#laptop": {
+        "thermal-zone": 0,
+        "format": " {temperatureC}°C",
+        "critical-threshold": 70,
+        "format-critical": " {temperatureC}°C",
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    }
+}

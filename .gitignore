@@ -2,3 +2,4 @@ backup.sh
 hypr/hyprland.conf
 waybar/config.jsonc
 **/__pycache__/
+*.log
